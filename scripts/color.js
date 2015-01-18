@@ -11,7 +11,7 @@ Color.prototype.sayColor = function() {
 
 Color.validateHexColor = function(color) {
 	var isValidColorRegex = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
-	return (isValidColorRegex.test('#' + color));
+	return (isValidColorRegex.test(color));
 }
 
 Color.fullHexFromShort = function(shortHex) {

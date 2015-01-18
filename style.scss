@@ -38,31 +38,6 @@ canvas {
   display: none;
 }
 
-#colorPreview {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  border: 1px solid black;
-}
-
-.addHash::before {
-  content: "#";
-  position: relative;
-  z-index: 2;
-  left: 20px;
-}
-
-.addHash input {
-  position: relative;
-  bottom: 2px;
-  padding-left: 15px;
-  width: 60px;
-}
-
-label * { 
-  vertical-align: middle;
-}
-
 .palette {
   
   border: 1px solid black;

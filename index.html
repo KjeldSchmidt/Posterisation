@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Posterize</title>
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="styles/spectrum.css">
 </head>
 <body>
 
@@ -35,53 +36,52 @@
 
 <label>
 	Enter color here:
-	<span class="addHash">
-		<input type="text" id="colorInput" />
-	</span>
-	<div id="colorPreview"></div>
+	<input type="color" id="colorInput" />
 </label>
 <div class="palettes">
 	<div class="palette">
-		<div class="color" data-color="000000"></div>
-		<div class="color" data-color="222222"></div>
-		<div class="color" data-color="444444"></div>
-		<div class="color" data-color="666666"></div>
-		<div class="color" data-color="888888"></div>
-		<div class="color" data-color="AAAAAA"></div>
-		<div class="color" data-color="CCCCCC"></div>
-		<div class="color" data-color="FFFFFF"></div>
+		<div class="color" data-color="#000000"></div>
+		<div class="color" data-color="#222222"></div>
+		<div class="color" data-color="#444444"></div>
+		<div class="color" data-color="#666666"></div>
+		<div class="color" data-color="#888888"></div>
+		<div class="color" data-color="#AAAAAA"></div>
+		<div class="color" data-color="#CCCCCC"></div>
+		<div class="color" data-color="#FFFFFF"></div>
 	</div>
 	<div class="palette">
-		<div class="color" data-color="44CCCC"></div>
-		<div class="color" data-color="CC44CC"></div>
-		<div class="color" data-color="CCCC44"></div>
-		<div class="color" data-color="4444CC"></div>
-		<div class="color" data-color="44CC44"></div>
-		<div class="color" data-color="CC4444"></div>
-		<div class="color" data-color="CCCCCC"></div>
-		<div class="color" data-color="444444"></div>
+		<div class="color" data-color="#44CCCC"></div>
+		<div class="color" data-color="#CC44CC"></div>
+		<div class="color" data-color="#CCCC44"></div>
+		<div class="color" data-color="#4444CC"></div>
+		<div class="color" data-color="#44CC44"></div>
+		<div class="color" data-color="#CC4444"></div>
+		<div class="color" data-color="#CCCCCC"></div>
+		<div class="color" data-color="#444444"></div>
 	</div>
 	<div class="palette">
-		<div class="color" data-color="61336E"></div>
-		<div class="color" data-color="153D59"></div>
-		<div class="color" data-color="145213"></div>
-		<div class="color" data-color="FFD959"></div>
-		<div class="color" data-color="692F28"></div>
+		<div class="color" data-color="#61336E"></div>
+		<div class="color" data-color="#153D59"></div>
+		<div class="color" data-color="#145213"></div>
+		<div class="color" data-color="#FFD959"></div>
+		<div class="color" data-color="#692F28"></div>
 	</div>
 	<div class="palette">
-		<div class="color" data-color="FFFFFF"></div>
-		<div class="color" data-color="000000"></div>
-		<div class="color" data-color="CC8888"></div>
-		<div class="color" data-color="88CC88"></div>
-		<div class="color" data-color="8888CC"></div>
+		<div class="color" data-color="#FFFFFF"></div>
+		<div class="color" data-color="#000000"></div>
+		<div class="color" data-color="#CC8888"></div>
+		<div class="color" data-color="#88CC88"></div>
+		<div class="color" data-color="#8888CC"></div>
 	</div>
 	<div class="palette">
-		<div class="color" data-color="FFFFFF"></div>
-		<div class="color" data-color="000000"></div>
+		<div class="color" data-color="#FFFFFF"></div>
+		<div class="color" data-color="#000000"></div>
 	</div>
 </div>
 
 <script src="script.js"></script>
 <script src="scripts/color.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="scripts/spectrum.js"></script>
 </body>
 </html>

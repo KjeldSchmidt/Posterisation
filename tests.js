@@ -5,9 +5,9 @@ QUnit.test( "hello test", function( assert ) {
 QUnit.test( "Hex Color Validation Test", function( assert ) {
 	assert.expect( 5 );
 	assert.ok( !Color.validateHexColor(''), 'Correctly validated');
-	assert.ok( !Color.validateHexColor('#ffffff'), 'Correctly validated');
-	assert.ok( Color.validateHexColor('abc'), 'Correctly validated');
-	assert.ok( Color.validateHexColor('A0bc9D'), 'Correctly validated');
+	assert.ok( !Color.validateHexColor('ffffff'), 'Correctly validated');
+	assert.ok( Color.validateHexColor('#abc'), 'Correctly validated');
+	assert.ok( Color.validateHexColor('#A0bc9D'), 'Correctly validated');
 	assert.ok( !Color.validateHexColor('abcde'), 'Correctly validated');
 });
 

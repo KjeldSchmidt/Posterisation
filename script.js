@@ -67,7 +67,7 @@ var s, Canvas = {
 	
 	applyColor: function(color) {
 		if (!Color.validateHexColor(color)) {
-			alert('#' + color + ' is not a valid hex color, please try again.');
+			alert(color + ' is not a valid hex color, please try again.');
 			return;
 		}
 		
@@ -79,9 +79,9 @@ var s, Canvas = {
 			console.log(color);
 		}
 		
-		var red = parseInt(color.substring(0, 2), 16);
-		var green = parseInt(color.substring(2, 4), 16);
-		var blue = parseInt(color.substring(4, 6), 16);  
+		var red = parseInt(color.substring(1, 3), 16);
+		var green = parseInt(color.substring(3, 5), 16);
+		var blue = parseInt(color.substring(5, 7), 16);  
 		
 		
 		if (!this.state.isColorApplied) {
@@ -188,7 +188,7 @@ var Controls = {
 	colorUpdate: function() {
 		var inputColor = Controls.colorInput.value;
 		if (Color.validateHexColor(inputColor)) {
-			Controls.colorPreview.style.background = '#' + inputColor;
+			Controls.colorPreview.style.background = inputColor;
 		}
 	}
 }
@@ -237,7 +237,7 @@ function Palette(domElement) {
 	for (var i = 0; i < colorDivs.length; i++) {
 		if( colorDivs[i].localName == "div" ) {
 			palette.colors.push(colorDivs[i].dataset.color);
-			colorDivs[i].style.background = '#' + colorDivs[i].dataset.color;
+			colorDivs[i].style.background = colorDivs[i].dataset.color;
 			
 			// Computes the width that all individual colors need, so that they have equal width and fill the parent container precisely.
 			parentTotalWidth = colorDivs[i].parentNode.offsetWidth;
