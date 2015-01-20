@@ -1,9 +1,9 @@
 var Controls = {
-	resetButton: document.getElementById('reset'),
-	applyColorButton: document.getElementById('applyColor'),
-	saveButton: document.getElementById('save'),
-	colorInput: document.getElementById('colorInput'),
-	colorPreview: document.getElementById('colorPreview'),
+	resetButton: document.getElementById( 'reset' ),
+	applyColorButton: document.getElementById( 'applyColor' ),
+	saveButton: document.getElementById( 'save' ),
+	colorInput: document.getElementById( 'colorInput' ),
+	colorPreview: document.getElementById( 'colorPreview' ),
 	
 	init: function() {
 		this.bindUIActions();
@@ -15,20 +15,21 @@ var Controls = {
 		};
 		
 		this.applyColorButton.onclick = function() {
-			Canvas.applyColor(Controls.colorInput.value);
+			Canvas.applyColor( Controls.colorInput.value );
+			activePalette.updatePalette( Controls.colorInput.value );
 		};
 		
-		this.colorInput.addEventListener('input', this.colorUpdate);
+		this.colorInput.addEventListener( 'input', this.colorUpdate );
 
-		this.saveButton.addEventListener('click', function (e) {
-			var dataURL = Canvas.canvas.toDataURL('image/png');
+		this.saveButton.addEventListener( 'click', function (e) {
+			var dataURL = Canvas.canvas.toDataURL( 'image/png' );
 			Controls.saveButton.href = dataURL;
 		});
 	},
 	
 	colorUpdate: function() {
 		var inputColor = Controls.colorInput.value;
-		if (Color.validateHexColor(inputColor)) {
+		if ( Color.validateHexColor( inputColor ) ) {
 			Controls.colorPreview.style.background = inputColor;
 		}
 	}

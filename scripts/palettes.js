@@ -14,6 +14,36 @@ function Palette(domElement) {
 					return fn;
 				}(this.colors)
 			);
+		},
+
+		updatePalette: function(newColor) {
+			this.colors.push(newColor);
+			this.showColors( this.colors );
+		},
+
+		showColors: function(colorArray) {
+
+			while ( this.domElement.firstChild ) {
+ 			   this.domElement.removeChild( this.domElement.firstChild );
+			}
+
+			var numberOfColors = colorArray.length;
+	
+			for ( var i = 0; i < numberOfColors; i++ ) {
+				var colorDiv = document.createElement( 'div' );
+				colorDiv.classList.add( 'color' );
+				this.domElement.appendChild( colorDiv );
+
+				colorDiv.style.background = colorArray[ i ];
+					
+				// Computes the width that all individual colors need, so that they have equal width and fill the parent container precisely.
+				parentTotalWidth = this.domElement.offsetWidth;
+				parentBorderWidth = parseInt(
+					getComputedStyle( this.domElement ).getPropertyValue( 'border-left-width' ),
+					10
+				);
+				colorDiv.style.width = ( ( parentTotalWidth - parentBorderWidth * 2 ) / numberOfColors) + "px";
+			}
 		}
 	};
 	
@@ -25,24 +55,20 @@ function Palette(domElement) {
 	for (var i = 0; i < colorDivs.length; i++) {
 		if( colorDivs[i].localName == "div" ) {
 			palette.colors.push(colorDivs[i].dataset.color);
-			colorDivs[i].style.background = colorDivs[i].dataset.color;
-			
-			// Computes the width that all individual colors need, so that they have equal width and fill the parent container precisely.
-			parentTotalWidth = colorDivs[i].parentNode.offsetWidth;
-			parentBorderWidth = parseInt(
-				getComputedStyle(colorDivs[i].parentNode).getPropertyValue('border-left-width'),
-				10
-			);
-			colorDivs[i].style.width =
-				(parentTotalWidth - parentBorderWidth*2) / ((colorDivs.length -1)/2) + "px";
 		}
 	}
+	palette.showColors( palette.colors );
 	
 	return palette;  
 }
 
+
+
+
+
+var activePalette = new Palette( document.getElementById( 'activePalette' ) );
 var palettes = [];
-var paletteNodes = document.querySelectorAll('.palette');
+var paletteNodes = document.querySelectorAll( '.palette' );
 
 for (var i = 0; i < paletteNodes.length; i++){
 	palettes.push(new Palette(paletteNodes[i]));
