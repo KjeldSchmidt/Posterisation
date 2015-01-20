@@ -8,80 +8,84 @@
 </head>
 <body>
 
+<div id="content">
+	<label>
+		Image File:
+		<input type="file" id="imageLoader" name="imageLoader" />
+	</label>
+	<div class="canvasContainer">
+		<canvas id="imageCanvas"></canvas>
+		<canvas id="originalCanvas"></canvas>
+	</div>
+	<button id="reset">
+		Reset Image
+	</button>
+	<button id="applyColor">
+		Apply Color
+	</button>
+	<a id="save" download="MyAwesomeImage.png" href="#" target="_blank">
+		<button>Save as new image</button>
+	</a>
 
-<label>
-	Image File:
-	<input type="file" id="imageLoader" name="imageLoader"/>
-</label>
-<a id="save" download="my-file-name.png" href="#" target="_blank">
-	<button>Save as new image</button>
-</a>
+	<br>
 
-
-<div class="canvasContainer">
-	<canvas id="imageCanvas"></canvas>
-	<canvas id="originalCanvas"></canvas>
+	<label>
+		Enter color here:
+		<input type="text" id="colorInput" />
+	</label>	
 </div>
-<button id="reset">
-	Reset Image
-</button>
-<button id="invert">
-	Invert
-</button>
-<button id="applyColor">
-	Apply Color
-</button>
-
-<br>
-
-<label>
-	Enter color here:
-	<input type="color" id="colorInput" />
-</label>
-<div class="palettes">
-	<div class="palette">
-		<div class="color" data-color="#000000"></div>
-		<div class="color" data-color="#222222"></div>
-		<div class="color" data-color="#444444"></div>
-		<div class="color" data-color="#666666"></div>
-		<div class="color" data-color="#888888"></div>
-		<div class="color" data-color="#AAAAAA"></div>
-		<div class="color" data-color="#CCCCCC"></div>
-		<div class="color" data-color="#FFFFFF"></div>
-	</div>
-	<div class="palette">
-		<div class="color" data-color="#44CCCC"></div>
-		<div class="color" data-color="#CC44CC"></div>
-		<div class="color" data-color="#CCCC44"></div>
-		<div class="color" data-color="#4444CC"></div>
-		<div class="color" data-color="#44CC44"></div>
-		<div class="color" data-color="#CC4444"></div>
-		<div class="color" data-color="#CCCCCC"></div>
-		<div class="color" data-color="#444444"></div>
-	</div>
-	<div class="palette">
-		<div class="color" data-color="#61336E"></div>
-		<div class="color" data-color="#153D59"></div>
-		<div class="color" data-color="#145213"></div>
-		<div class="color" data-color="#FFD959"></div>
-		<div class="color" data-color="#692F28"></div>
-	</div>
-	<div class="palette">
-		<div class="color" data-color="#FFFFFF"></div>
-		<div class="color" data-color="#000000"></div>
-		<div class="color" data-color="#CC8888"></div>
-		<div class="color" data-color="#88CC88"></div>
-		<div class="color" data-color="#8888CC"></div>
-	</div>
-	<div class="palette">
-		<div class="color" data-color="#FFFFFF"></div>
-		<div class="color" data-color="#000000"></div>
+<div id="controls">
+	<div class="palettes">
+		<h3>
+			Active palette
+		</h3>
+		<div id="activePalette" class="userPalette">
+		</div>
+		<h3>
+			Palette presets
+		</h3>
+		<div class="palette">
+			<div class="color" data-color="#000000"></div>
+			<div class="color" data-color="#222222"></div>
+			<div class="color" data-color="#444444"></div>
+			<div class="color" data-color="#666666"></div>
+			<div class="color" data-color="#888888"></div>
+			<div class="color" data-color="#AAAAAA"></div>
+			<div class="color" data-color="#CCCCCC"></div>
+			<div class="color" data-color="#FFFFFF"></div>
+		</div>
+		<div class="palette">
+			<div class="color" data-color="#44CCCC"></div>
+			<div class="color" data-color="#CC44CC"></div>
+			<div class="color" data-color="#CCCC44"></div>
+			<div class="color" data-color="#4444CC"></div>
+			<div class="color" data-color="#44CC44"></div>
+			<div class="color" data-color="#CC4444"></div>
+			<div class="color" data-color="#FFFFFF"></div>
+			<div class="color" data-color="#000000"></div>
+		</div>
+		<div class="palette">
+			<div class="color" data-color="#61336E"></div>
+			<div class="color" data-color="#153D59"></div>
+			<div class="color" data-color="#145213"></div>
+			<div class="color" data-color="#FFD959"></div>
+			<div class="color" data-color="#692F28"></div>
+		</div>
+		<div class="palette">
+			<div class="color" data-color="#FFFFFF"></div>
+			<div class="color" data-color="#000000"></div>
+			<div class="color" data-color="#CC8888"></div>
+			<div class="color" data-color="#88CC88"></div>
+			<div class="color" data-color="#8888CC"></div>
+		</div>
+		<div class="palette">
+			<div class="color" data-color="#FFFFFF"></div>
+			<div class="color" data-color="#000000"></div>
+		</div>
 	</div>
 </div>
 
-<script src="script.js"></script>
-<script src="scripts/color.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="scripts/spectrum.js"></script>
+
+<script src="script.min.js"></script>
 </body>
 </html>
