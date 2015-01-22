@@ -17,8 +17,10 @@ function Palette(domElement) {
 		},
 
 		updatePalette: function(newColor) {
-			this.colors.push(newColor);
-			this.showColors( this.colors );
+			if (this.colors.indexOf(newColor) === -1) {
+				this.colors.push(newColor);
+				this.showColors( this.colors );	
+			}
 		},
 
 		showColors: function(colorArray) {
