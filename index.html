@@ -36,52 +36,89 @@
 </div>
 <div id="controls">
 	<div class="palettes">
-		<h3>
-			Active palette
-		</h3>
-		<div id="activePalette" class="userPalette">
+		<div class="collapsible">
+			<input type="checkbox" id="activeBox">
+			<label for="activeBox">
+				<h3>
+					Active palette
+				</h3>
+			</label>
+			<div class="collapsedContent">
+				<div id="activePalette" class="userPalette"></div>	
+			</div>
 		</div>
-		<h3>
-			Palette presets
-		</h3>
-		<div class="palette">
-			<div class="color" data-color="#000000"></div>
-			<div class="color" data-color="#222222"></div>
-			<div class="color" data-color="#444444"></div>
-			<div class="color" data-color="#666666"></div>
-			<div class="color" data-color="#888888"></div>
-			<div class="color" data-color="#AAAAAA"></div>
-			<div class="color" data-color="#CCCCCC"></div>
-			<div class="color" data-color="#FFFFFF"></div>
+		
+		<div class="collapsible">
+			<input type="checkbox" id="presetBox">
+			<label for="presetBox">
+				<h3>
+					Palette presets
+				</h3>				
+			</label>
+			<div class="collapsedContent">
+				<div class="palette">
+					<div class="color" data-color="#000000"></div>
+					<div class="color" data-color="#222222"></div>
+					<div class="color" data-color="#444444"></div>
+					<div class="color" data-color="#666666"></div>
+					<div class="color" data-color="#888888"></div>
+					<div class="color" data-color="#AAAAAA"></div>
+					<div class="color" data-color="#CCCCCC"></div>
+					<div class="color" data-color="#FFFFFF"></div>
+				</div>
+				<div class="palette">
+					<div class="color" data-color="#44CCCC"></div>
+					<div class="color" data-color="#CC44CC"></div>
+					<div class="color" data-color="#CCCC44"></div>
+					<div class="color" data-color="#4444CC"></div>
+					<div class="color" data-color="#44CC44"></div>
+					<div class="color" data-color="#CC4444"></div>
+					<div class="color" data-color="#FFFFFF"></div>
+					<div class="color" data-color="#000000"></div>
+				</div>
+				<div class="palette">
+					<div class="color" data-color="#61336E"></div>
+					<div class="color" data-color="#153D59"></div>
+					<div class="color" data-color="#145213"></div>
+					<div class="color" data-color="#FFD959"></div>
+					<div class="color" data-color="#692F28"></div>
+				</div>
+				<div class="palette">
+					<div class="color" data-color="#FFFFFF"></div>
+					<div class="color" data-color="#000000"></div>
+					<div class="color" data-color="#CC8888"></div>
+					<div class="color" data-color="#88CC88"></div>
+					<div class="color" data-color="#8888CC"></div>
+				</div>
+				<div class="palette">
+					<div class="color" data-color="#FFFFFF"></div>
+					<div class="color" data-color="#000000"></div>
+				</div>
+			</div>
 		</div>
-		<div class="palette">
-			<div class="color" data-color="#44CCCC"></div>
-			<div class="color" data-color="#CC44CC"></div>
-			<div class="color" data-color="#CCCC44"></div>
-			<div class="color" data-color="#4444CC"></div>
-			<div class="color" data-color="#44CC44"></div>
-			<div class="color" data-color="#CC4444"></div>
-			<div class="color" data-color="#FFFFFF"></div>
-			<div class="color" data-color="#000000"></div>
+
+		<div class="collapsible">
+			<input id="autocolor" type="checkbox">
+			<label for="autocolor">
+				<h3>
+					Auto-Color
+				</h3>
+			</label>
+			<div class="collapsedContent">
+				<ul id="autoColors" class="menu">
+					<li id="commonColorsButton">
+						Most Common Colors
+					</li>
+					<li id="neighbourColorsButton">
+						Closest Neighbour Elimination (Slow)
+					</li>
+					<li id="densityColorsButton">
+						Density
+					</li>
+				</ul>
+			</div>
 		</div>
-		<div class="palette">
-			<div class="color" data-color="#61336E"></div>
-			<div class="color" data-color="#153D59"></div>
-			<div class="color" data-color="#145213"></div>
-			<div class="color" data-color="#FFD959"></div>
-			<div class="color" data-color="#692F28"></div>
-		</div>
-		<div class="palette">
-			<div class="color" data-color="#FFFFFF"></div>
-			<div class="color" data-color="#000000"></div>
-			<div class="color" data-color="#CC8888"></div>
-			<div class="color" data-color="#88CC88"></div>
-			<div class="color" data-color="#8888CC"></div>
-		</div>
-		<div class="palette">
-			<div class="color" data-color="#FFFFFF"></div>
-			<div class="color" data-color="#000000"></div>
-		</div>
+
 	</div>
 </div>
 
