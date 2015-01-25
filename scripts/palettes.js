@@ -63,15 +63,3 @@ function Palette(domElement) {
 	
 	return palette;  
 }
-
-
-
-
-
-var activePalette = new Palette( document.getElementById( 'activePalette' ) );
-var palettes = [];
-var paletteNodes = document.querySelectorAll( '.palette' );
-
-for (var i = 0; i < paletteNodes.length; i++){
-	palettes.push(new Palette(paletteNodes[i]));
-}

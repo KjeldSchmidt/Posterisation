@@ -4,9 +4,19 @@ var Controls = {
 	saveButton: document.getElementById( 'save' ),
 	colorInput: document.getElementById( 'colorInput' ),
 	colorPreview: document.getElementById( 'colorPreview' ),
+
+	palettes: [],
+	activePalette: null,
 	
 	init: function() {
 		this.bindUIActions();
+
+		this.activePalette = new Palette( document.getElementById( 'activePalette' ) );
+		var paletteNodes = document.querySelectorAll( '.palette' );
+
+		for (var i = 0; i < paletteNodes.length; i++){
+			this.palettes.push(new Palette(paletteNodes[i]));
+		}
 	},
 	
 	bindUIActions: function() {

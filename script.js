@@ -2,3 +2,5 @@
 // @koala-prepend "scripts/controls.js"
 // @koala-prepend "scripts/colors.js"
 // @koala-prepend "scripts/palettes.js"
+// @koala-prepend "scripts/autoColors.js"
+// @koala-prepend "scripts/utility.js"

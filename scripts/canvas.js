@@ -24,11 +24,11 @@ var s, Canvas = {
 		this.imageLoader.addEventListener('change', this.imageUpload, false);
 	},
 	
-	imageUpload: function(e) {
+	imageUpload: function( e ) {
 		var reader = new FileReader();
-		reader.onload = function(event){
+		reader.onload = function( event ) {
 			var img = new Image();
-			img.onload = function(){
+			img.onload = function() {
 				img = Canvas.scaleImageToBoundingBox(img);
 				Canvas.context.drawImage( img, 0, 0, img.width, img.height);
 				Canvas.originalContext.drawImage( img, 0, 0, img.width, img.height);
@@ -36,7 +36,7 @@ var s, Canvas = {
 			}
 			img.src = event.target.result;
 		}
-		reader.readAsDataURL(e.target.files[0]);
+		reader.readAsDataURL( e.target.files[0] );
 	},
 	
 	scaleImageToBoundingBox: function(img) {
@@ -63,6 +63,23 @@ var s, Canvas = {
 		var originalData = this.originalContext.getImageData(0, 0, s.width, s.height);
 		this.context.putImageData(originalData, 0, 0);
 		this.state.isColorApplied = false;
+	},
+
+	getOriginalColors: function() {
+		var colors = [];
+		var originalData = this.originalContext.getImageData(0, 0, s.width, s.height);
+		var originalPixels = originalData.data;
+
+		for (var i = 0, n = originalPixels.length; i < n; i += 4) {
+			colors.push(new Color(
+				originalPixels[i],
+				originalPixels[i+1],
+				originalPixels[i+2]
+			));
+		}
+
+		return colors;
+
 	},
 	
 	applyColor: function(color) {
@@ -96,6 +113,7 @@ var s, Canvas = {
 			var originalData = this.originalContext.getImageData(0, 0, s.width, s.height);
 			var originalPixels = originalData.data;
 			
+			// Distances are euclidean, see http://en.wikipedia.org/wiki/Euclidean_distance
 			var nextDistanceToOriginal = 0;
 			var prevDistanceToOriginal = 0;
 			for (var i = 0, n = pixels.length; i < n; i += 4) {
@@ -126,4 +144,6 @@ var s, Canvas = {
 		}
 	}
 }
+
+
 Canvas.init();
