@@ -6,13 +6,9 @@ function Color(red, green, blue) {
 
 
 Color.prototype.getRGBString = function() {
-	var red = this.red.toString( 16 );
-	var green = this.green.toString( 16 );
-	var blue = this.blue.toString( 16 );
-
-	if (red.length === 1) { red = "0" + red; }
-	if (green.length === 1) { green = "0" + green; }
-	if (blue.length === 1) { blue = "0" + blue; }
+	var red = hexNormalizeNumber( this.red );
+	var green = hexNormalizeNumber( this.green );
+	var blue = hexNormalizeNumber( this.blue );
 
 	return "#" + red + green +  blue;
 };
@@ -23,12 +19,20 @@ Color.validateHexColor = function(color) {
 };
 
 Color.fullHexFromShort = function(shortHex) {
-	if (shortHex.length === 3) {
+	if (shortHex.length ===	 3) {
 		return shortHex.substring(0, 1) + shortHex.substring(0, 1) +
 			shortHex.substring(1, 2) + shortHex.substring(1, 2) +
 			shortHex.substring(2, 3) + shortHex.substring(2, 3);	
-	} else {
-		throw new Error("Invalid short hex notation");
-	}
-	
+	} 
+
+	throw new Error("Invalid short hex notation");
 };
+
+function hexNormalizeNumber( number ) {
+	if ( number < 0 ) { number = 0; } 
+	if ( number > 255 ) { number = 255; }
+	number = number.toString ( 16 ).toUpperCase();
+	if ( number.length === 1 ) { number = "0" + number;	}
+
+	return number;
+}

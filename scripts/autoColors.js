@@ -17,7 +17,8 @@ var AutoColors = {
 		var originalColors = Canvas.getOriginalColors();
 		var colorCount = AutoColors.countColorOccurences( originalColors );
 		colorCount = sortAssociativeArray( colorCount );
-		colorCount.splice( 0, colorCount.length - 10 );
+		colorCount = colorCount.splice( 0, Math.min( colorCount.length - 10, 10 ) );
+
 		console.dir( colorCount );
 	},
 

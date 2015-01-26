@@ -26,7 +26,7 @@ var Controls = {
 		
 		this.applyColorButton.onclick = function() {
 			Canvas.applyColor( Controls.colorInput.value );
-			activePalette.updatePalette( Controls.colorInput.value );
+			activePalette.addColor( Controls.colorInput.value );
 		};
 		
 		this.colorInput.addEventListener( 'input', this.colorUpdate );

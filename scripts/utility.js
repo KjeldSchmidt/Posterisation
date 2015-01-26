@@ -9,7 +9,7 @@ function sortAssociativeArray(array) {
 		return a[1] - b[1] }
 	);
 
-	return tuples;
+	return tuples.reverse();
 }
 
 function minTwoDigits(n) {
