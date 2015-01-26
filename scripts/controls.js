@@ -3,7 +3,6 @@ var Controls = {
 	applyColorButton: document.getElementById( 'applyColor' ),
 	saveButton: document.getElementById( 'save' ),
 	colorInput: document.getElementById( 'colorInput' ),
-	colorPreview: document.getElementById( 'colorPreview' ),
 
 	palettes: [],
 	activePalette: null,
@@ -26,22 +25,13 @@ var Controls = {
 		
 		this.applyColorButton.onclick = function() {
 			Canvas.applyColor( Controls.colorInput.value );
-			activePalette.addColor( Controls.colorInput.value );
+			Controls.activePalette.addColor( Controls.colorInput.value );
 		};
-		
-		this.colorInput.addEventListener( 'input', this.colorUpdate );
 
 		this.saveButton.addEventListener( 'click', function (e) {
 			var dataURL = Canvas.canvas.toDataURL( 'image/png' );
 			Controls.saveButton.href = dataURL;
 		});
 	},
-	
-	colorUpdate: function() {
-		var inputColor = Controls.colorInput.value;
-		if ( Color.validateHexColor( inputColor ) ) {
-			Controls.colorPreview.style.background = inputColor;
-		}
-	}
 }
 Controls.init();
