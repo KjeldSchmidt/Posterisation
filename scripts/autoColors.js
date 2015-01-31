@@ -15,11 +15,20 @@ var AutoColors = {
 
 	commonColors: function() {
 		var originalColors = Canvas.getOriginalColors();
+		
+		originalColors = originalColors.map( function( color ) {
+			color.reduce(32);
+			return color;
+		});
+
 		var colorCount = AutoColors.countColorOccurences( originalColors );
 		colorCount = sortAssociativeArray( colorCount );
-		colorCount = colorCount.splice( 0, Math.min( colorCount.length - 10, 10 ) );
 
-		console.dir( colorCount );
+		colorCount = colorCount.slice( 0, 10 );
+
+		for ( var i = 0; i < colorCount.length; i++ ) {
+			Canvas.applyColor( colorCount[i][0] );
+		}
 	},
 
 	neighbourColors: function() {

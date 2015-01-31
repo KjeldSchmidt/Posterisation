@@ -13,6 +13,16 @@ Color.prototype.getRGBString = function() {
 	return "#" + red + green +  blue;
 };
 
+Color.prototype.reduce = function (radius) {
+	if ( typeof radius === "number" ) {
+		this.red -= this.red % radius;
+		this.green -= this.green % radius;
+		this.blue -= this.blue % radius;
+	} else {
+		throw new Error("Reduction-radius is NaN");
+	}
+}
+
 Color.validateHexColor = function(color) {
 	var isValidColorRegex = /(^#[0-9A-F]{6}$)|(^#[0-9A-F]{3}$)/i;
 	return ( isValidColorRegex.test( color ) );
