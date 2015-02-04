@@ -16,12 +16,12 @@ var AutoColors = {
 	commonColors: function() {
 		var originalColors = Canvas.getOriginalColors();
 		
-		originalColors = originalColors.map( function( color ) {
+		reducedColors = originalColors.map( function( color ) {
 			color.reduce(32);
 			return color;
 		});
 
-		var colorCount = AutoColors.countColorOccurences( originalColors );
+		var colorCount = AutoColors.countColorOccurences( reducedColors );
 		colorCount = sortAssociativeArray( colorCount );
 
 		colorCount = colorCount.slice( 0, 10 );

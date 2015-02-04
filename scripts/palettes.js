@@ -10,7 +10,8 @@ function Palette(domElement) {
 				function(colors) {
 					var fn = function() {
 						Canvas.applyColorArray(colors);
-					} 
+					};
+					 
 					return fn;
 				}(this.colors)
 			);
@@ -53,11 +54,9 @@ function Palette(domElement) {
 	palette.bindUIActions();
 	
 	// Pushes all colors on the array.
-	var colorDivs = domElement.childNodes;
+	var colorDivs = domElement.getElementsByTagName( 'div' );
 	for (var i = 0; i < colorDivs.length; i++) {
-		if( colorDivs[i].localName == "div" ) {
-			palette.colors.push(colorDivs[i].dataset.color);
-		}
+		palette.colors.push(colorDivs[i].dataset.color);
 	}
 	palette.showColors( palette.colors );
 	
