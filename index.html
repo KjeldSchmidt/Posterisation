@@ -108,6 +108,21 @@
 				<ul id="autoColors" class="menu">
 					<li id="commonColorsButton">
 						Most Common Colors
+						<label class="rangeContainer">
+							<input name="levels" type="range" min="2" max="32" value="10">
+							<div>
+								<span class="output">10</span>
+								: Number of colors
+							</div>
+						</label>
+						<label class="rangeContainer">
+							<input name="radius" type="range" min="1" max="255" value="32">
+							<div>
+								<span class="output">32</span>
+								: Minimum color distance
+							</div>
+						</label>
+
 					</li>
 					<li id="neighbourColorsButton">
 						Closest Neighbour Elimination (Slow)

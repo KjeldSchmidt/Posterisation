@@ -35,3 +35,19 @@ var Controls = {
 	},
 }
 Controls.init();
+
+var ranges = document.querySelectorAll('.rangeContainer');
+
+for (var i = 0; i < ranges.length; i++) {
+  var output = ranges[i].getElementsByClassName('output')[0];
+  var input = ranges[i].getElementsByTagName('input')[0];
+  
+  ranges[i].addEventListener('input', bindIO( input, output ) );
+}
+
+function bindIO( input, output ) {
+  
+  return function() {
+    output.innerHTML = input.value;
+  }
+}

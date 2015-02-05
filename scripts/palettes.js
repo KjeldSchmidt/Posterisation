@@ -7,18 +7,18 @@ function Palette(domElement) {
 			// All this is necessary to pass the this.colors to the canvas.
 			this.domElement.addEventListener(
 				'click',
-				function(colors) {
+				function( colors ) {
 					var fn = function() {
-						Canvas.applyColorArray(colors);
+						Canvas.applyColorArray( colors );
 					};
 					 
 					return fn;
-				}(this.colors)
+				}( this.colors )
 			);
 		},
 
 		addColor: function(newColor) {
-			if (this.colors.indexOf(newColor) === -1) {
+			if ( this.colors.indexOf( newColor ) === -1 ) {
 				this.colors.push(newColor);
 				this.showColors( this.colors );	
 			}

@@ -222,3 +222,39 @@ canvas {
 		}
 	}
 }
+
+$label-color: #aaa;
+
+.rangeContainer {
+	display: block;
+	margin: 0.5rem 0;
+
+	& > * {
+		vertical-align: middle;
+		display: inline-block;
+	}
+
+	div {
+		background: $label-color;
+		color: white;
+		padding: 0.25rem 1rem 0.25rem 0.6rem;
+		border-radius: 0 0.5rem 0.5rem 0;
+		height: 2rem;
+		position: relative;
+		left: 1rem;
+		line-height: 1.3rem;
+
+		&:before {
+			display: block;
+			content: "";
+			position: absolute;
+			left: -1rem;
+			top: 0;
+			width: 0;
+			height: 0;
+			border-top: 1rem solid transparent;
+			border-right: 1rem solid $label-color;
+			border-bottom: 1rem solid transparent;
+		}
+	}
+}

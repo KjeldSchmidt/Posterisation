@@ -13,8 +13,8 @@ Color.prototype.getRGBString = function() {
 	return "#" + red + green +  blue;
 };
 
-Color.prototype.reduce = function (radius) {
-	if ( typeof radius === "number" ) {
+Color.prototype.reduce = function ( radius ) {
+	if ( !isNaN( radius ) ) {
 		this.red -= this.red % radius;
 		this.green -= this.green % radius;
 		this.blue -= this.blue % radius;
